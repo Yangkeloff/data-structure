@@ -6,18 +6,15 @@
 //
 
 #include <iostream>
-void move(char a,char b){
-    printf("移动%c的最上层到%c\n",a,b);
-}
 
-void hanoi(int n,char a,char b,char c){
+void hanoi(int n,char from,char buffer,char to){
     if (n==1) {
-        move(a, c);
+        printf("从%c移动到%c\n",from,to);
     }
     else {
-        hanoi(n-1, a, c, b);
-        move(a, c);
-        hanoi(n-1, b, a, c);
+        hanoi(n-1, from, to, buffer);
+        hanoi(1, from, buffer, to);
+        hanoi(n-1, buffer, from, to);
     }
 }
 
