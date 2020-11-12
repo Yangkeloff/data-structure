@@ -11,13 +11,19 @@
 #define MaxVertexNum 100
 #define INFINITY 999
 
-struct {
+typedef int Edge;
+
+typedef struct {
     char Vex;
     int Edge[MaxVertexNum][MaxVertexNum];
     int vexnum,arcnum;  // 当前顶点数，边/弧数
 }MGraph;
 
-
+void createMGraph(MGraph &G){
+    int i,j,k,w;
+    printf("输入顶点数和边数\n");
+    
+}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
