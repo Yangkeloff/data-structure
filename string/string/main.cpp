@@ -50,6 +50,27 @@ int Index(SString S,SString T){
     return 0; // 不存在匹配子串
 }
 
+// 朴素模式匹配（和Index定位操作原理相同）
+int SimpleIndex(SString S,SString T){   //S为主串，T为模式串(要匹配的子串)
+    int i=1,j=1;  //两个“指针”，主串和模式串的对应字符位置
+    while (i<=S.length && j<=T.length) { //主串开始和模式串字符逐个对比
+        if (S.ch[i]==T.ch[j]) {     //继续比较后继字符
+            ++i;
+            ++j;
+        } else {    //未匹配成功，检查主串中的下一个子串(++k开始)
+            i=i-j+2; //主串指针后移一位，进行下一轮
+            j=1;    //模式串指针后退重新开始匹配
+        }
+    }
+    //跳出while循环，i>S.length或者j>T.length
+    if (j>T.length) {  //如果匹配成功，模式串“指针”j会超出其模式串长度(++j导致)，返回当前子串在主串中的位置
+        return i-T.length;
+    } else {    //由于i>S.length而跳出循环，表示没有匹配成功
+        return -1;
+    }
+} // 时间复杂度 最好O(n) 最坏O(nm)
+
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
