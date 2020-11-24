@@ -11,13 +11,15 @@
 
 int Partition(int A[],int low,int high) {
     int pivot = A[low];     // 取第一个元素作为枢轴
-    while (low<high) {      // 用low、high搜索数轴的最终位置
+    while (low<high) {      // 用low、high搜索枢轴的最终位置
+        // high指针不断左移，寻找到比枢轴小的元素跳出循环，或和low指针相遇时跳出循环
         while(low<high && A[high]>=pivot) --high;
         A[low]=A[high];     // 比枢轴小的元素移动到左端
+        // low指针不断右移，寻找到比枢轴大的元素跳出循环，或和high指针相遇时跳出循环
         while(low<high && A[low]<=pivot) ++low;
         A[high]=A[low];     // 比枢轴大的元素移动到右端
     }
-    A[low] = pivot;     // 循环结束时，low=high，即枢轴的最终位置
+    A[low] = pivot;     // 循环结束(low和high相遇)时，low=high，即枢轴的最终位置
     return low;     // 返回本次枢轴存放的位置
 }
 
