@@ -35,7 +35,7 @@ void MergeSort(int A[],int low,int high) {
 
 int main(int argc, const char * argv[]) {
   int arr[] = {5,4,3,2,1};
-  MergeSort(arr, 0, 5);
+  MergeSort(arr, 0, 4);
   for (int i=0; i<5; i++) {
     std::cout << arr[i] << " ";
   }
