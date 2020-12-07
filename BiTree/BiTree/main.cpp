@@ -32,7 +32,7 @@ void visit(BiTree T){
 //2. 栈顶元素出栈并访问：若其右孩子为空，继续执行2；若其右孩子不空，则将右子树执行1；
 void InOrder2(BiTree T){
   SqStack S;  InitStack(S); BiTree p=T;
-  while (p || IsEmpty(S)) {
+  while (p || !IsEmpty(S)) {
     if (p) {    // 一路向左
       Push(S, p);   // 当前结点入栈
       p=p->lchild;  // 左孩子不空，一直向左走
