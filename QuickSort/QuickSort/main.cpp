@@ -16,6 +16,7 @@ int Partition(int A[],int low,int high) {
         while(low<high && A[high]>=pivot) --high;
         A[low]=A[high];     // 比枢轴小的元素移动到左端
         // low指针不断右移，寻找到比枢轴大的元素跳出循环，或和high指针相遇时跳出循环
+        // 先high指针左移,再low指针右移，顺序不能反
         while(low<high && A[low]<=pivot) ++low;
         A[high]=A[low];     // 比枢轴大的元素移动到右端
     }
