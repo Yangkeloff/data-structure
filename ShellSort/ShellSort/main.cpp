@@ -23,9 +23,9 @@ void ShellSort(int A[],int n){
 }
 
 int main(int argc, const char * argv[]) {
-  int arr[]={NULL,9,8,7,6,5};
-  ShellSort(arr, 5);
-  for (int i=1; i<6; i++) {
+  int arr[]={NULL,9,8,7,6,5,11,10,2,1,3,233,666,566};
+  ShellSort(arr, 13);
+  for (int i=1; i<14; i++) {
     std::cout << arr[i] << " ";
   }
   return 0;
