@@ -15,7 +15,7 @@ void swap(int &a,int &b){
 
 void BubbleSort(int A[],int n){
   int i,j;
-  for (i=0; i<n; ++i) {
+  for (i=0; i<n-1; ++i) {
     bool flag=false;    // 本趟排序是否发生交换的标志
     for (j=n-1; j>i; --j) {   // 一趟冒泡
       if (A[j]<A[j-1]) {    // 每个元素和前一个元素对比
